@@ -1,0 +1,61 @@
+interface PaymentGatewayy {
+    void pay(double amount);
+    void refund(double amount);
+    void generateReceipt();
+}
+
+class CreditCardPayment implements PaymentGatewayy {
+
+    public void pay(double amount) {
+        System.out.println("Paid " + amount + " using Credit Card.");
+    }
+
+    public void refund(double amount) {
+        System.out.println("Refunded " + amount + " to Credit Card.");
+    }
+
+    public void generateReceipt() {
+        System.out.println("Credit Card receipt generated.");
+    }
+}
+
+class BkashPayment implements PaymentGatewayy {
+
+    public void pay(double amount) {
+        System.out.println("Paid " + amount + " using Bkash.");
+    }
+
+    public void refund(double amount) {
+        System.out.println("Refunded " + amount + " to Bkash.");
+    }
+
+    public void generateReceipt() {
+        System.out.println("Bkash receipt generated.");
+    }
+}
+
+class PayPalPayment implements PaymentGatewayy {
+
+    public void pay(double amount) {
+        System.out.println("Paid " + amount + " using PayPal.");
+    }
+
+    public void refund(double amount) {
+        System.out.println("Refunded " + amount + " to PayPal.");
+    }
+
+    public void generateReceipt() {
+        System.out.println("PayPal receipt generated.");
+    }
+}
+
+public class  PaymentGateway {
+    public static void main(String[] args) {
+
+        PaymentGatewayy payment = new BkashPayment();
+
+        payment.pay(1000);
+        payment.refund(500);
+        payment.generateReceipt();
+    }
+}
